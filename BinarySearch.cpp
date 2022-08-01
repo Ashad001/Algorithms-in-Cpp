@@ -28,8 +28,8 @@ int BinarySearch(vector<int> arr, int target)
 
 int main(int argc, char const *argv[])
 {
-    vector<int> input = {1,2,3,4,5,6,7,8,9};
-    int ans = BinarySearch(input, 9);
+    vector<int> input = {1};
+    int ans = BinarySearch(input, 1);
     cout << ans;
     
     return 0;

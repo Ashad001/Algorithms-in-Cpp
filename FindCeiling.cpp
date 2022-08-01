@@ -23,7 +23,7 @@ int Ceiling(vector<int> arr, int target)
 int main(int argc, char const *argv[])
 {
     vector<int> arr = {1,3,4,6,8,9,20};
-    int target = 5;
+    int target = 20;
     int ans = Ceiling(arr, target);
     cout << ans;
 
