@@ -17,7 +17,7 @@ int Ceiling(vector<int> arr, int target)
             return mid;
     }
     return start;
-
+    
 }
 
 int main(int argc, char const *argv[])
