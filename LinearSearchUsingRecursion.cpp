@@ -2,31 +2,23 @@
 #include <vector>
 using namespace std;
 
-bool IsSort(vector<int> arr, int i)
-{
-    if (arr[i] <= arr[i + 1] && i == arr.size() - 2)
-        return 1;
 
-    if (arr[i] <= arr[i + 1])
-    {
-        return 1 && IsSort(arr, i + 1);
-    }
-    else
-    {
-        return 0;
-    }
+int LinearSearch(vector<int> arr, int target, int index)
+{
+    if(index == arr.size())
+        return -1;
+    if(arr[index] == target)
+        return index;
+    else 
+        return LinearSearch(arr, target, index+1);
 };
 
-bool LinearSearch(vector<int> arr)
-{
-    return IsSort(arr, 0);
-};
+
 
 int main(int argc, char const *argv[])
 {
-    vector<int> arr = {50,60,70,80,9};
-    bool ans = LinearSearch(arr);
-    cout << ans;
+    vector<int> arr = {1,2,3,4,5,6};
+    cout << LinearSearch(arr, 4, 0);
 
     return 0;
 }
