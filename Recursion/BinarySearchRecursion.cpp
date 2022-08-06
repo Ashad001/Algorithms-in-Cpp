@@ -7,7 +7,6 @@ int Search(vector<int> arr, int target, int start, int end)
     int mid = start + (end - start) / 2;
     if (start <= end)
     {
-
         if (target == arr[mid])
             return mid;
         else if (target < arr[mid])
