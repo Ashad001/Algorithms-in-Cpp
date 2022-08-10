@@ -1,22 +1,34 @@
+/*
+Description: Program to reverse integer using recursion
+Time complexity: O(n) where n is the number of digits in the integer
+*/
+
 #include <iostream>
 #include <math.h>
 using namespace std;
 
+int Helper(int n ,int base , int ans)
+{
+    if(n < 1)
+        return ans;
+    ans = ans * base + (n % 10);    // Update the ans for every digit
+    return Helper(n / 10, base , ans);    
+}
+
 int Rev(int n)
 {
-    // cout << (int)log10(n);
-    static long base = pow(10 , (int)log10(n) + 1);
-    if(n < 10)
-        return n;
-    base /= 10;
-    return (n % 10) * base + Rev(n / 10);
+    return Helper(n , 10, 0);
 }
 
 
 int main(int argc, char const *argv[])
 {   
-    cout << Rev(12345);
+    cout << Rev(13579);
 
-    
     return 0;
 }
+/*
+Input: 13579
+Output: 97531
+*/
+
