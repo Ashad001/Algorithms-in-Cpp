@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int Min(vector<int> &arr, int start, int end);
@@ -9,7 +10,8 @@ void SelectionSort(vector<int> &arr);
 int main(int argc, char const *argv[])
 {
     vector<int> vec = {5 ,4 ,1 ,6 ,2};
-    SelectionSort(vec);
+    // SelectionSort(vec);
+    sort(vec.begin() , vec.end());
     for (auto numbers : vec)
     {
         cout << numbers << " ";
