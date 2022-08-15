@@ -18,7 +18,6 @@ int Dice(string ans, int num, int target, int count, int n, int k)
 {
     if (num == 0)
     {
-        cout << ans << endl;
         if (ans.size() == n && Sum(ans) == target)
         {
             count++;
