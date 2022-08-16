@@ -1,7 +1,7 @@
 import os
 import random
-
-p = "C:/Users/Ashad Qureshi/OneDrive - FAST National University/Desktop/Game"
+# Program To Randomly Play Videos
+p = "" # Give a path to a folder that has some random folders and each forlder contain some videos!!!
 os.chdir(p)  # change directory
 
 folder_name = random.choice(os.listdir(p))   # choose a random folder
