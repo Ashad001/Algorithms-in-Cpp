@@ -7,5 +7,6 @@
         "iostream": "cpp",
         "algorithm": "cpp",
         "map": "cpp"
-    }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }

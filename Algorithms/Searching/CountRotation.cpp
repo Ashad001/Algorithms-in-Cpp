@@ -21,12 +21,12 @@ int CountRotation(vector<int> arr)
     }
     if(ans == 0)
         ans = -1;
-    return ans + 1;
+    return arr[ans + 1];
 }
 
 int main(int argc, char const *argv[])
 {
-    vector<int> input = {1,2,3,4,5,6};
+    vector<int> input = {3,4,5,1,2};
     int ans = CountRotation(input);
     cout << ans << endl;
     
