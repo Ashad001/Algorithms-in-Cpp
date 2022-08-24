@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cmath>
+
 using namespace std;
 
 void Dice(string ans, int num, int face)
@@ -56,7 +57,6 @@ int DiceRetCount(string ans, int num, int n, int k)
         count = count + DiceRetCount(ans + to_string(i), num - i, n, k);
     }
     return int(count % int(pow(10.0,9.0) + 7));
-    // return count;
 
 };
 

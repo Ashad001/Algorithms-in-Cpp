@@ -55,7 +55,7 @@ bool Solver(vector<vector<int>> &arr)
 {
     int row = -1;
     int col = -1;
-    
+
     bool check = true;
     for(int i = 0; i < arr.size(); i++)
     {

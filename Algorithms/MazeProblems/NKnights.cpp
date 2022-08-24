@@ -105,7 +105,7 @@ int main(int argc, char const *argv[])
             {0, 0, 0, 0},
             {0, 0, 0, 0}};
     // Display(arr);
-    Knight(arr, 0, 0, 4);
+    Knight(arr, 0, 0, 5);
 
     return 0;
 }
