@@ -2,7 +2,6 @@
 
 
 
-// A C++ program to sort an array in wave form using a sorting function
 #include<iostream>
 #include<algorithm>
 using namespace std;
