@@ -31,7 +31,7 @@ int Dice(string ans, int num, int target, int count, int n, int k)
             return Dice(ans + to_string(i), num - i, target, count, n, k);
         }
     }
-    // return count;
+    return count;
 }
 int numRollsToTarget(int n, int k, int target)
 {

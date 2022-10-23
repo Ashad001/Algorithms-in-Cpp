@@ -2,33 +2,38 @@
 #include <vector>
 using namespace std;
 
+void Display(vector<int> &arr)
+{
+    for(auto num : arr)
+    {
+        cout << num << ", ";
+    }
+    cout << endl;
+}
+
 void InsertionSort(vector<int> &arr)
 {
-    for(int i = 0; i < arr.size() - 1; i++)
+    for(int i = 1; i < arr.size(); i++)
     {
-        for(int j = i + 1; j > 0; j--)
+        int key = arr[i];
+        int j = i - 1;
+        while(j >= 0 && key < arr[j])
         {
-            if(arr[j] < arr[j - 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j - 1];
-                arr[j - 1] = temp;
-            }
-            else 
-            {
-                break;
-            }
-
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = key;
+        Display(arr);
     }
+
 }
+
 
 int main(int argc, char const *argv[])
 {
-    vector<int> arr = {5,4,3,21,1};
+    vector<int> arr = {1,5,3,2,7,4};
     InsertionSort(arr);
-    for (int i = 0; i < arr.size(); i++)
-        cout << arr[i] << ", ";
-
+    Display(arr);
+    
     return 0;
 }
