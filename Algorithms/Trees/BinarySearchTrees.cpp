@@ -120,7 +120,7 @@ int HeightOfATree(Node *root)
     int right = HeightOfATree(root->right);
     return (left > right) ? left + 1 : right + 1;
 }
-Node * MinInBST(Node *root)
+Node *MinInBST(Node *root)
 {
     if (root == NULL)
     {
@@ -133,7 +133,7 @@ Node * MinInBST(Node *root)
     }
     return MinInBST(root->left);
 }
-Node * MaxInBST(Node *root)
+Node *MaxInBST(Node *root)
 {
     if (root == NULL)
     {
@@ -201,33 +201,33 @@ bool DepthFirstSearch(Node *root, int data)
 }
 Node *Delete(Node *root, int data)
 {
-    if(root == NULL)
+    if (root == NULL)
     {
         return root;
     }
-    else if(data < root->data)
+    else if (data < root->data)
     {
         root->left = Delete(root->left, data);
     }
-    else if(data > root->data) 
+    else if (data > root->data)
     {
         root->right = Delete(root->right, data);
     }
     else
     {
-        if(root->left == NULL && root->right == NULL)
+        if (root->left == NULL && root->right == NULL)
         {
             root = NULL;
         }
-        else if(root->left == NULL)
+        else if (root->left == NULL)
         {
             root = root->right;
         }
-        else if(root->right == NULL)
+        else if (root->right == NULL)
         {
             root = root->left;
         }
-        else 
+        else
         {
             Node *temp = MinInBST(root->right);
             root->data = temp->data;
@@ -286,7 +286,6 @@ int main(int argc, char const *argv[])
     Delete(root, 2);
     PrintInorder(root);
     cout << endl;
-    
 
     return 0;
 }
