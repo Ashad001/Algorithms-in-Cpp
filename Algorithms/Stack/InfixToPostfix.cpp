@@ -48,6 +48,7 @@ bool isOperand(char ch)
 {
     return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '1' && ch <= '9'));
 }
+
 bool HasHigherPrecedence(char first, char second)
 {
     return FirstPrecedence(first) > SecondPrecedence(second);
@@ -125,7 +126,7 @@ string InfixToPrefix(string exp)
         }
     }
     string ans = InfixToPostfix(exp);
-    reverse(ans.begin() , ans.end());
+    reverse(ans.begin(), ans.end());
     return ans;
 }
 
@@ -135,7 +136,7 @@ int main(int argc, char const *argv[])
     cout << "Enter Expression: ";
     getline(cin, exp);
     cout << InfixToPostfix(exp) << endl;
-     cout << InfixToPrefix(exp);
+    cout << InfixToPrefix(exp);
 
     return 0;
 }

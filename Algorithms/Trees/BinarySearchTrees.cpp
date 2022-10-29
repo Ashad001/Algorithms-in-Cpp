@@ -247,7 +247,7 @@ int main(int argc, char const *argv[])
     root = Insert(root, 0);
     root = Insert(root, 40);
     root = Insert(root, 25);
-    // PrintTree(root);
+    PrintTree(root);
     cout << endl;
     // PrintPostOrder(root);
     // cout << endl;
@@ -281,11 +281,11 @@ int main(int argc, char const *argv[])
     //     cout << "Not Found!" << endl;
     // }
 
-    PrintInorder(root);
-    cout << endl;
-    Delete(root, 2);
-    PrintInorder(root);
-    cout << endl;
+    // PrintInorder(root);
+    // cout << endl;
+    // Delete(root, 2);
+    // PrintInorder(root);
+    // cout << endl;
 
     return 0;
 }
