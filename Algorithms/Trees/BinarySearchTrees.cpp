@@ -120,6 +120,18 @@ int HeightOfATree(Node *root)
     int right = HeightOfATree(root->right);
     return (left > right) ? left + 1 : right + 1;
 }
+int DiameterOfATree(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int Height = HeightOfATree(root->left) + HeightOfATree(root->right);
+    int leftD = DiameterOfATree(root->left);
+    int RightD = DiameterOfATree(root->right);
+    return max(Height, max(leftD, RightD));
+}
+
 Node *MinInBST(Node *root)
 {
     if (root == NULL)
@@ -151,27 +163,21 @@ void LevelOrderTraversal(Node *root) // Depth First
         cerr << "Tree is empty!";
         return;
     }
-
     queue<Node *> q;
     q.push(root);
     while (!q.empty())
     {
         Node *curr = q.front();
         if (curr != NULL)
-        {
             cout << curr->data << " -> ";
-        }
         if (curr->left != NULL)
-        {
             q.push(curr->left);
-        }
         if (curr->right != NULL)
-        {
             q.push(curr->right);
-        }
         q.pop();
     }
 }
+
 bool DepthFirstSearch(Node *root, int data)
 {
     if (root == NULL)
@@ -235,20 +241,94 @@ Node *Delete(Node *root, int data)
         }
     }
 }
+int LevelOfNode(Node *root, int val)
+{
+    if (root == NULL)
+        return -1;
+
+    queue<Node *> q;
+    q.push(root);
+    int count = -1;
+    bool check = false;
+    while (!q.empty())
+    {
+        Node *curr = q.front();
+        count++;
+        if (curr->data == val)
+        {
+            check = true;
+            break;
+        }
+        else if (curr->left != NULL && val < curr->data)
+        {
+            q.push(curr->left);
+        }
+        else if (curr->right != NULL && val > curr->data)
+        {
+            q.push(curr->right);
+        }
+        q.pop();
+    }
+    return (check == true) ? count : -1;
+}
+int CountNodes(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return CountNodes(root->right) + CountNodes(root->left) + 1;
+}
+
+int CountRightNodes(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    int k = (root->right) ? 1 : 0;
+    return CountRightNodes(root->left) + CountRightNodes(root->right) + k;
+}
+
+int CountLeaves(Node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int l = (root->left == NULL && root->right == NULL) ? 1 : 0;
+    return l + CountLeaves(root->left) + CountLeaves(root->right);
+}
 
 int main(int argc, char const *argv[])
 {
-    Node *root = NULL;
-    root = Insert(root, 10);
-    root = Insert(root, 20);
-    root = Insert(root, 2);
-    root = Insert(root, 5);
-    root = Insert(root, -2);
-    root = Insert(root, 0);
-    root = Insert(root, 40);
-    root = Insert(root, 25);
-    PrintTree(root);
-    cout << endl;
+    // Node *root = NULL;
+    // root = Insert(root, 10);
+    // root = Insert(root, 20);
+    // root = Insert(root, 2);
+    // root = Insert(root, 5);
+    // root = Insert(root, -2);
+    // root = Insert(root, 0);
+    // root = Insert(root, 40);
+    // root = Insert(root, 25);
+    // PrintTree(root);
+    // cout << HeightOfATree(root) << endl;
+    // // cout << CountNodes(root) << endl;
+    // // LevelOrderTraversal(root);
+    // cout << endl;
+    vector<vector<string>> s = {
+        {"ashad", "ayehs", "faheel"},
+        {"fgf"},
+        {"hjgsfd"}};
+    cout << s.at(0).at(1) << endl;
+    // // cout << DepthFirstSearch(root, -2);
+    // cout << LevelOfNode(root, 25);
+    // PrintInorder(root);
+    // cout << endl;
+    // PrintPreOrder(root);
+    // cout << endl;
+    // cout << DiameterOfATree(root) << endl;
     // PrintPostOrder(root);
     // cout << endl;
     // PrintInorder(root);

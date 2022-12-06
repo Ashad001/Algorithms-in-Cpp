@@ -135,7 +135,7 @@ int main(int argc, char const *argv[])
     BinaryTree tree;
     vector<int> arr = {1, 2, 3, -1, -1, 4, 5, -1, -1, 3, -1, -1, 6, -1, -1};
     Node *root = tree.BuildTree(arr);
-    // tree.InOrderTraversal(root);
+    // tree.PrintPreorder(root);
     tree.LevelOrder(root);
     cout << "Total Node: " << tree.CountNodes(root) << endl;
     cout << "Sum Of Nodes: " << tree.SumOfNodes(root) << endl;

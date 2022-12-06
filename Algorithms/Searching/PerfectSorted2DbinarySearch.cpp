@@ -1,7 +1,12 @@
 // C++ program to implement Binary Search in 2D Arrays
 #include <iostream>
 #include <vector>
+#include <thread>
+#include <chrono>
+#include <dos.h>
 using namespace std;
+using namespace std::this_thread;
+
 
 // Floor of a array is the greatest number which is smaller than or equal to the target element
 // Search the floor number in the first column. Since the array is sorted that means the target element

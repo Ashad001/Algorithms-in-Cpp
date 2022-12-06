@@ -7,7 +7,11 @@
         "iostream": "cpp",
         "algorithm": "cpp",
         "map": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "ostream": "cpp",
+        "exception": "cpp",
+        "memory": "cpp",
+        "utility": "cpp"
     },
     "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }
