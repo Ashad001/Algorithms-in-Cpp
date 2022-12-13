@@ -11,7 +11,6 @@ int main(int argc, char const *argv[])
 {
     vector<int> vec = {5 ,4 ,1 ,6 ,2};
     SelectionSort(vec);
-    // sort(vec.begin() , vec.end());
     for (auto numbers : vec)
     {
         cout << numbers << " ";
