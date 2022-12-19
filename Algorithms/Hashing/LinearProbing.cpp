@@ -3,7 +3,7 @@
 #include <map>
 using namespace std;
 
-#define SIZE 10
+#define SIZE 128
 
 class HashNode
 {

@@ -36,7 +36,10 @@ vector<int> Dijkstra(vector<vector<int>> grp, int src)
         setVal[e] = true;
         for (int v = 0; v < V; v++)
         {
-            if (!setVal[v] && grp[e][v] && dist[e] != INT_MAX && dist[e] + grp[e][v] < dist[v])
+            if (!setVal[v] && 
+                 grp[e][v] && 
+        dist[e] != INT_MAX && 
+        dist[e] + grp[e][v] < dist[v])
             {
                 dist[v] = dist[e] + grp[e][v];
             }

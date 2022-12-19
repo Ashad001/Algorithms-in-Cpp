@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 // Time Complexity : O(8^(n^2))
 // There are N2 Cells and for each, we have a maximum of 8 possible moves to choose from
-=======
->>>>>>> 4f492d9ad04ff8a3d4eac73ae67f5d6969be98f9
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -78,43 +75,25 @@ bool IsSafe(vector<vector<int>> &arr, int row, int col)
 
 void Knight(vector<vector<int>> &board, int row, int col, int knights)
 {
-<<<<<<< HEAD
     if (knights == 0) // If all knights are places than show the board
-=======
-    if (knights == 0)
->>>>>>> 4f492d9ad04ff8a3d4eac73ae67f5d6969be98f9
     {
         Display(board);
         return;
     }
     if (row == board.size() - 1 && col == board.size())
     {
-<<<<<<< HEAD
         return; // out of bounds
     }
     if (col == board.size())
     {
         Knight(board, row + 1, 0, knights); // switching rows
-=======
-        return;
-    }
-    if (col == board.size())
-    {
-        Knight(board, row + 1, 0, knights);
->>>>>>> 4f492d9ad04ff8a3d4eac73ae67f5d6969be98f9
         return;
     }
     if (IsSafe(board, row, col))
     {
-<<<<<<< HEAD
         board[row][col] = true; // Placing the knight
         Knight(board, row, col + 1, knights - 1);
         board[row][col] = false; // Backtraking
-=======
-        board[row][col] = true;
-        Knight(board, row, col + 1, knights - 1);
-        board[row][col] = false;
->>>>>>> 4f492d9ad04ff8a3d4eac73ae67f5d6969be98f9
     }
     Knight(board, row, col + 1, knights);
 }
